@@ -25,7 +25,6 @@ if (isset($_POST['submit'])) {
   } else {
     $body = filter_input(INPUT_POST, 'body', FILTER_SANITIZE_SPECIAL_CHARS);
   }
-};
 
 if (empty($nameErr) && empty($emailErr) &&  empty($bodyErr)) {
   $sql = "INSERT INTO feedback(name,email,body) VALUES('$name','$email','$body')";
@@ -37,6 +36,7 @@ if (empty($nameErr) && empty($emailErr) &&  empty($bodyErr)) {
     echo 'Error:' . mysqli_error($conn);
   }
 }
+};
 
 echo $name;
 echo $email;
